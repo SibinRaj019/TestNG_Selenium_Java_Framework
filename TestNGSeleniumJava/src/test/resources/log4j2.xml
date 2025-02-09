@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <!-- Single log file per test run with timestamp -->
+        <Property name="logFileName">logs/TestRun_${date:yyyy-MM-dd_HH-mm-ss}.log</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Rolling File Appender (Single log file for entire run) -->
+        <RollingFile name="RollingFile"
+                     fileName="${logFileName}"
+                     filePattern="logs/archived/TestRun-%d{yyyy-MM-dd_HH-mm-ss}.log.gz"
+                     append="true">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <!-- <TimeBasedTriggeringPolicy interval="1" modulate="true"/> -->
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

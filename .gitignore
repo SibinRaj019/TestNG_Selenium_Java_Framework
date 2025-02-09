@@ -4,3 +4,6 @@
 TestNGSeleniumJava/.classpath
 /TestNGSeleniumJava/target
 TestNGSeleniumJava/.project
+/TestNGSeleniumJava/test-output
+/TestNGSeleniumJava/ExtentReports
+/TestNGSeleniumJava/logs

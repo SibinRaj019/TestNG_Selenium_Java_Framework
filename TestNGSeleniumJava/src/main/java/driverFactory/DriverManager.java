@@ -23,11 +23,11 @@ public class DriverManager {
 		switch (browser.toLowerCase()) {
 		case "chrome":
 			ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--headless"); // Run in CI mode
-//			options.addArguments("--disable-dev-shm-usage"); // Fix for /dev/shm error
-//			options.addArguments("--no-sandbox"); // Run without sandbox
-//			options.addArguments("--remote-allow-origins=*");
-//			options.addArguments("--user-data-dir=/tmp/chrome-profile"); // Fix for session error
+			options.addArguments("--headless"); // Run in CI mode
+			options.addArguments("--disable-dev-shm-usage"); // Fix for /dev/shm error
+			options.addArguments("--no-sandbox"); // Run without sandbox
+			options.addArguments("--remote-allow-origins=*");
+			options.addArguments("--user-data-dir=/tmp/chrome-profile"); // Fix for session error
 			driver = new ChromeDriver(options);
 			break;
 

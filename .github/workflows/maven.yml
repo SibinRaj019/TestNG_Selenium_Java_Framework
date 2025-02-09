@@ -31,7 +31,7 @@ jobs:
         cache: maven
         
     - name: Execute TestNGSeleniumJava
-      run: mvn -f TestNGSeleniumJava/pom.xmlclean test -Dsuite=TestRunners/TestSuite -X
+      run: mvn -f TestNGSeleniumJava/pom.xml clean test -Dsuite=TestRunners/TestSuite -X
 
     # ✅ Upload Extent Reports as an Artifact
     - name: Upload Extent Reports

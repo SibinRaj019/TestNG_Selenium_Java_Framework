@@ -1,0 +1,49 @@
+name: TestNGSeleniumJava
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+      issues: write
+
+    steps:
+    - name: Debug File Structure
+      run: ls -R
+  
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: maven
+        
+    - name: Execute TestNGSeleniumJava
+      run: mvn -f TestNGSeleniumJava/pom.xmlclean test -Dsuite=TestRunners/TestSuite -X
+
+    # ✅ Upload Extent Reports as an Artifact
+    - name: Upload Extent Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: Extent-Test-Report
+        path: TestNGSeleniumJava/ExtentReports/*.html  # Adjust path if needed
+        retention-days: 7  # Keeps report for 7 days
+
+    # ✅ Upload Logs (if needed)
+    - name: Upload Logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: TestNGSeleniumJava/Logs
+        path: logs/

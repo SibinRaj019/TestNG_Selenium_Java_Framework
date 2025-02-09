@@ -45,5 +45,5 @@ jobs:
     - name: Upload Logs
       uses: actions/upload-artifact@v4
       with:
-        name: TestNGSeleniumJava/Logs
+        name: TestNGSeleniumJava/logs
         path: logs/

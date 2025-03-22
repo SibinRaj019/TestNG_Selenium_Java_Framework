@@ -1,7 +1,7 @@
 # TestNG Selenium Testing Framework
 
 ## Project Overview
-This is a **TestNG-based test automation framework** designed for testing web applications. The framework supports **UI automation using Selenium**, along with **Log4j for logging** and **Extent Reports for reporting**.
+This is a **TestNG-based test automation framework** designed for testing the [SauceDemo](https://www.saucedemo.com/) website. The framework supports **UI automation using Selenium**, along with **Log4j for logging** and **Extent Reports for reporting**.
 
 ## Repository Link
 [GitHub - TestNG Selenium Java Framework](https://github.com/SibinRaj019/TestNG_Selenium_Java_Framework)
@@ -13,13 +13,12 @@ This is a **TestNG-based test automation framework** designed for testing web ap
 - **Logging:** Log4j
 - **Reporting:** Extent Reports
 - **Build Tool:** Maven
-- **CI/CD:**GitHub Actions
 
 ## Project Structure
 ```
 TestNGFramework/
 │── src/
-│   ├── main
+│   ├── main/
 │   │   ├── java/
 │   │   │   ├── com.projectname/
 │   │   │   │   ├── pages/             # Page Object Model (POM) for UI
@@ -85,3 +84,4 @@ Feel free to contribute by creating a pull request or reporting issues.
 
 ### **Author**
 **Sibin Raj** - [GitHub](https://github.com/SibinRaj019)
+
